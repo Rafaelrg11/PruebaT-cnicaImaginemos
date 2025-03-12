@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("PruebaTécnicaImaginemos.ApiView")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d00bebc0e7a43b6995859cfd101f991912c0779b")]
 [assembly: System.Reflection.AssemblyProductAttribute("PruebaTécnicaImaginemos.ApiView")]
 [assembly: System.Reflection.AssemblyTitleAttribute("PruebaTécnicaImaginemos.ApiView")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
