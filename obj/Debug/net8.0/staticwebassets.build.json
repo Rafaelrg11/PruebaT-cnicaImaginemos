@@ -1,0 +1,12 @@
+{
+  "Version": 1,
+  "Hash": "QfnZEPKDZsh6WkoJjZsUsAGxMXb6IDdl/ZQnqa2zMx0=",
+  "Source": "PruebaTécnicaImaginemos.ApiView",
+  "BasePath": "_content/PruebaTécnicaImaginemos.ApiView",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": [],
+  "Endpoints": []
+}

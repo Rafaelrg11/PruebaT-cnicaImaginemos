@@ -8,11 +8,13 @@
 
   <ItemGroup>
     <PackageReference Include="MediatR" Version="12.4.1" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="9.0.2" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.6.2" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\PruebaTecnicaImaginemos.Application\PruebaTecnicaImaginemos.Application.csproj" />
+    <ProjectReference Include="..\PruebaTecnicaImaginemos.Infraestructure\PruebaTecnicaImaginemos.Infraestructure.csproj" />
   </ItemGroup>
 
 </Project>

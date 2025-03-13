@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\buildMultiTargeting\PruebaTécnicaImaginemos.ApiView.props" />
+</Project>

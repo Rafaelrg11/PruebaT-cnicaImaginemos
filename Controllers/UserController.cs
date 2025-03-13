@@ -12,7 +12,7 @@ using PruebaTecnicaImaginemos.Domain.DTOs.User;
 
 namespace PruebaTécnicaImaginemos.Controllers;
 
-[Route("[controller]")]
+[Route("api/[controller]")]
 [ApiController]
 public class UserController : ControllerBase
 {
@@ -33,13 +33,13 @@ public class UserController : ControllerBase
             return BadRequest(response.IsFailure);
         }
 
-        return Ok(response);
+        return Ok(response.Value);
     }
 
-    [HttpGet("[GetUser]")]
+    [HttpGet("GetUser{id}")]
     public async Task<IActionResult> GetUser(Guid id, CancellationToken cancellationToken)
     {
-        var response = await _sender.Send(new GetUsersQuery(id));
+        var response = await _sender.Send(new GetUserQuery(id));
 
         if (!response.IsSuccess)
         {
@@ -49,7 +49,7 @@ public class UserController : ControllerBase
         return Ok(response.Value);
     }
 
-    [HttpGet("[GetAllUsers]")]
+    [HttpGet("GetAllUsers")]
     public async Task<IActionResult> GetAllUsers()
     {
         var response = await _sender.Send(new GetAllUsersQuery());
@@ -62,7 +62,7 @@ public class UserController : ControllerBase
         return Ok(response.Value);
     }
 
-    [HttpPut("[UpdateUser]")]
+    [HttpPut("UpdateUser{id}")]
     public async Task<IActionResult> UpdateUser(UserDTO2 userDTO, CancellationToken cancellationToken)
     {
         var response = await _sender.Send(new UpdateUserCommand(userDTO));
@@ -75,7 +75,7 @@ public class UserController : ControllerBase
         return Ok(response.Value);
     }
 
-    [HttpGet("[PaginationUser]")]
+    [HttpGet("PaginationUser")]
     public async Task<IActionResult> PaginationUser(int skip = 0, int limit = 12)
     {
         var response = await _sender.Send(new PaginationUserQuery(skip, limit));
@@ -94,7 +94,7 @@ public class UserController : ControllerBase
         return Ok(dataModel);
     }
 
-    [HttpDelete("DeleteUser")]
+    [HttpDelete("DeleteUser{id}")]
     public async Task<IActionResult> DeleteUser(Guid id, CancellationToken cancellationToken)
     {
         var response = await _sender.Send(new DeleteUserCommand(id));

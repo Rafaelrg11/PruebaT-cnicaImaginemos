@@ -1,7 +1,12 @@
+using PruebaTecnicaImaginemos.Application;
+using PruebaTecnicaImaginemos.Infraestructure;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
+builder.Services.AddApplication();
+builder.Services.AddInfraestructure(builder.Configuration);
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
