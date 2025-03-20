@@ -31,10 +31,10 @@ public class SaleDetailController : Controller
     }
 
     [HttpPost("CreateSaleDetail")]
-    public async Task<IActionResult> CreateSaleDetail(SaleDetailDTO detail, CancellationToken cancellationToken)
+    public async Task<IActionResult> CreateSaleDetail(SaleDetailDTO2 detail, CancellationToken cancellationToken)
     {
-        var response = await _sender.Send(new CreateSaleDetailCommand(detail.IdProduct, detail.IdSale, 
-            detail.Amount, detail.UnitPrice, detail.Total));
+        var response = await _sender.Send(new CreateDetailSaleCommand(detail.IdProduct, detail.IdSale, 
+            detail.Amount, detail.UnitPrice));
 
         if (!response.IsSuccess)
         {

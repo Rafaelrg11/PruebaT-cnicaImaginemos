@@ -23,9 +23,9 @@ public class SaleController : Controller
     }
 
     [HttpPost("CreateSale")]
-    public async Task<IActionResult> CreateSale(CreateSaleCommand request, CancellationToken cancellationToken)
+    public async Task<IActionResult> CreateSale(SaleDTO2 request, CancellationToken cancellationToken)
     {
-        var response = await _sender.Send(new CreateSaleCommand(request.Sales, request.userId, request.Time));
+        var response = await _sender.Send(new CreateSaleCommand(request.UserId));
 
         if (!response.IsSuccess)
         {

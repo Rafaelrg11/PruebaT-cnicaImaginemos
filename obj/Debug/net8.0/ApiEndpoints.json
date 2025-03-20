@@ -9,7 +9,7 @@
     "Parameters": [
       {
         "Name": "dTO",
-        "Type": "PruebaTecnicaImaginemos.Domain.DTOs.Product.ProductDTO",
+        "Type": "PruebaTecnicaImaginemos.Domain.DTOs.Product.ProductDTO2",
         "IsRequired": true
       }
     ],
@@ -109,7 +109,7 @@
     "Parameters": [
       {
         "Name": "request",
-        "Type": "PruebaTecnicaImaginemos.Application.Commands.Sale.CreateSale.CreateSaleCommand",
+        "Type": "PruebaTecnicaImaginemos.Domain.DTOs.Sale.SaleDTO2",
         "IsRequired": true
       }
     ],
@@ -209,7 +209,7 @@
     "Parameters": [
       {
         "Name": "detail",
-        "Type": "PruebaTecnicaImaginemos.Domain.DTOs.SaleDetail.SaleDetailDTO",
+        "Type": "PruebaTecnicaImaginemos.Domain.DTOs.SaleDetail.SaleDetailDTO2",
         "IsRequired": true
       }
     ],
@@ -366,12 +366,12 @@
     "Order": 0,
     "Parameters": [
       {
-        "Name": "skip",
+        "Name": "limit",
         "Type": "System.Int32",
         "IsRequired": false
       },
       {
-        "Name": "limit",
+        "Name": "skip",
         "Type": "System.Int32",
         "IsRequired": false
       }

@@ -23,7 +23,7 @@ public class ProductController : Controller
     }
 
     [HttpPost("CreateProduct")]
-    public async Task<IActionResult> CreateProduct(ProductDTO dTO, CancellationToken cancellationToken)
+    public async Task<IActionResult> CreateProduct(ProductDTO2 dTO, CancellationToken cancellationToken)
     {
         var response = await _sender.Send(new CreateProductCommand(dTO.NameProduct, dTO.Price, dTO.Description));
 
@@ -58,7 +58,7 @@ public class ProductController : Controller
             return BadRequest(response.IsFailure);
         }
 
-        return Ok(response.Value);
+        return Ok(new { products = response.Value.Item1});
     }
 
     [HttpPut("UpdateProduct{id}")]

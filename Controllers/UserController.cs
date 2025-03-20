@@ -59,7 +59,7 @@ public class UserController : ControllerBase
             return BadRequest(response.IsFailure);
         }
 
-        return Ok(response.Value);
+        return Ok(new { users = response.Value.Item1});
     }
 
     [HttpPut("UpdateUser{id}")]
@@ -76,22 +76,16 @@ public class UserController : ControllerBase
     }
 
     [HttpGet("PaginationUser")]
-    public async Task<IActionResult> PaginationUser(int skip = 0, int limit = 12)
+    public async Task<IActionResult> PaginationUser(int limit = 12, int skip = 0)
     {
-        var response = await _sender.Send(new PaginationUserQuery(skip, limit));
+        var response = await _sender.Send(new PaginationUserQuery(limit, skip));
 
         if (!response.IsSuccess)
         {
             return BadRequest(response.IsFailure);
         }
 
-        var dataModel = new ResponseStandar<List<UserResponse>>()
-        {
-            data = response.Value.Item1,
-            total = response.Value.Item2
-        };
-
-        return Ok(dataModel);
+        return Ok(new { users = response.Value.Item1, total = response.Value.Item2 });
     }
 
     [HttpDelete("DeleteUser{id}")]

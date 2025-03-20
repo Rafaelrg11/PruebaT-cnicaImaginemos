@@ -14,17 +14,17 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/ProductDTO"
+                "$ref": "#/components/schemas/ProductDTO2"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/ProductDTO"
+                "$ref": "#/components/schemas/ProductDTO2"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/ProductDTO"
+                "$ref": "#/components/schemas/ProductDTO2"
               }
             }
           }
@@ -176,17 +176,17 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/CreateSaleCommand"
+                "$ref": "#/components/schemas/SaleDTO2"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/CreateSaleCommand"
+                "$ref": "#/components/schemas/SaleDTO2"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/CreateSaleCommand"
+                "$ref": "#/components/schemas/SaleDTO2"
               }
             }
           }
@@ -338,17 +338,17 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/SaleDetailDTO"
+                "$ref": "#/components/schemas/SaleDetailDTO2"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/SaleDetailDTO"
+                "$ref": "#/components/schemas/SaleDetailDTO2"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/SaleDetailDTO"
+                "$ref": "#/components/schemas/SaleDetailDTO2"
               }
             }
           }
@@ -605,21 +605,21 @@
         ],
         "parameters": [
           {
-            "name": "skip",
-            "in": "query",
-            "schema": {
-              "type": "integer",
-              "format": "int32",
-              "default": 0
-            }
-          },
-          {
             "name": "limit",
             "in": "query",
             "schema": {
               "type": "integer",
               "format": "int32",
               "default": 12
+            }
+          },
+          {
+            "name": "skip",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "default": 0
             }
           }
         ],
@@ -656,56 +656,6 @@
   },
   "components": {
     "schemas": {
-      "CreateSaleCommand": {
-        "type": "object",
-        "properties": {
-          "sales": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/SaleDetailDTO2"
-            },
-            "nullable": true
-          },
-          "userId": {
-            "type": "string",
-            "format": "uuid"
-          },
-          "time": {
-            "type": "string",
-            "format": "date-time"
-          }
-        },
-        "additionalProperties": false
-      },
-      "ProductDTO": {
-        "type": "object",
-        "properties": {
-          "idProduct": {
-            "type": "string",
-            "format": "uuid"
-          },
-          "nameProduct": {
-            "type": "string",
-            "nullable": true
-          },
-          "price": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "description": {
-            "type": "string",
-            "nullable": true
-          },
-          "detailSales": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/SaleDetailDTO"
-            },
-            "nullable": true
-          }
-        },
-        "additionalProperties": false
-      },
       "ProductDTO2": {
         "type": "object",
         "properties": {
@@ -735,53 +685,9 @@
             "type": "string",
             "format": "uuid"
           },
-          "dateTime": {
-            "type": "string",
-            "format": "date-time"
-          },
-          "total": {
-            "type": "integer",
-            "format": "int32"
-          },
           "userId": {
             "type": "string",
             "format": "uuid"
-          }
-        },
-        "additionalProperties": false
-      },
-      "SaleDetailDTO": {
-        "type": "object",
-        "properties": {
-          "idSaleDetail": {
-            "type": "string",
-            "format": "uuid"
-          },
-          "idProduct": {
-            "type": "string",
-            "format": "uuid"
-          },
-          "idSale": {
-            "type": "string",
-            "format": "uuid"
-          },
-          "amount": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "unitPrice": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "total": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "sale": {
-            "$ref": "#/components/schemas/SaleDTO2"
-          },
-          "products": {
-            "$ref": "#/components/schemas/ProductDTO2"
           }
         },
         "additionalProperties": false
@@ -806,10 +712,6 @@
             "format": "int32"
           },
           "unitPrice": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "total": {
             "type": "integer",
             "format": "int32"
           }
